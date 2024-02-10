@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dominio", "CoreDomain\Dominio.csproj", "{DC4F4E4B-0970-4C6B-B1B7-C65C5E99FB3D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistencia", "Persistence\Persistencia.csproj", "{EC69A3DB-FB21-4EC1-A24A-229030E89689}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Servicios", "Services\Servicios.csproj", "{CCBA3E09-791C-4C31-B63F-CE91FC93FB1D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DC4F4E4B-0970-4C6B-B1B7-C65C5E99FB3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC4F4E4B-0970-4C6B-B1B7-C65C5E99FB3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC4F4E4B-0970-4C6B-B1B7-C65C5E99FB3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC4F4E4B-0970-4C6B-B1B7-C65C5E99FB3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC69A3DB-FB21-4EC1-A24A-229030E89689}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC69A3DB-FB21-4EC1-A24A-229030E89689}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC69A3DB-FB21-4EC1-A24A-229030E89689}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC69A3DB-FB21-4EC1-A24A-229030E89689}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCBA3E09-791C-4C31-B63F-CE91FC93FB1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCBA3E09-791C-4C31-B63F-CE91FC93FB1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCBA3E09-791C-4C31-B63F-CE91FC93FB1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCBA3E09-791C-4C31-B63F-CE91FC93FB1D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5D1318ED-5980-427D-B8C0-8FF3BCA67498}
+	EndGlobalSection
+EndGlobal
