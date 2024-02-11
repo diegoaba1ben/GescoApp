@@ -13,5 +13,22 @@ namespace CoreDomain{
         RolId = RolId;
         PermisoId = PermisoId;
        }
+       public RolPermiso()
+       {
+        //Constructor vacío
+       }
+       //Validación que el  rol y el permiso no sean nulos
+       public bool Validar()
+       {
+        if(Rol == null)
+        {
+          return false;
+        }
+        if (Permiso == null)
+        {
+          return false;
+        }
+        return true;
+       }
     }
 }
