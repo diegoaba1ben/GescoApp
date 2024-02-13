@@ -10,6 +10,11 @@ namespace CoreDomain{
 
        //Métodos
        public RolPermiso(string Nombre, string Descripcion){
+        RolId = 0; //Asigna del valor válido para RolId
+        PermisoId = 0; //Asigna del valor válido para Permiso
+        Rol = new Rol();//Inicializa la propiedad Rol con un objeto del tipo Rol
+        Permiso = new Permiso();//Inicializa la propiedad  Permiso con un objeto del tipo Permiso
+
         RolId = RolId;
         PermisoId = PermisoId;
        }

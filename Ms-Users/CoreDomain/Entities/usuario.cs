@@ -21,7 +21,7 @@ namespace CoreDomain
         [Required]
         [MinLength(8, ErrorMessage = "La contraseña debe tener mínimo 8 caracteres")]
         [MaxLength(12, ErrorMessage ="La contraseña debe tener maximo 12 caracteres")]
-        [RegularExpression(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$")]
+        [RegularExpression(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{10,}$")]
         public string Contrasena {get; set;} = string.Empty;
 
         [Required]
@@ -33,7 +33,7 @@ namespace CoreDomain
 
         //Propiedad para crear una colección de objetos tipo list
         public List<Rol> Roles {get; set;} = new List<Rol>();
-        public DateTime FechaImplementacion {get; set;}
+        public DateTime FechaImplementacion {get; set;}//Función para auditoría 
 
         public int RolId {get; set;}
         public Rol Rol {get; set;} = new Rol();
