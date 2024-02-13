@@ -1,25 +1,39 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Identity.Client;
-
 
 public class MyContext : DbContext
 {
-    public MyContext(DbContextOptions<MyContext> options) : base(options)
-    {
-    }
+  private readonly IConfiguration _configuration;
 
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
-    {
-        modelBuilder.ApplyConfigurationsFromAssembly(typeof(MyContext).Assembly);
-    }
+  public MyContext(IConfiguration configuration)
+  {
+    _configuration = configuration;
+  }
 
-    //Bloque DbSet
-    public DbSet<Usuario> Usuarios { get; set; }
-    public DbSet<Rol> Roles { get; set; }
-    public DbSet<Permiso> Permisos { get; set; }
-    public DbSet<RolPermiso> RolPermisos { get; set; }
+  protected override void OnModelCreating(ModelBuilder modelBuilder)
+  {
+    modelBuilder.ApplyConfigurationsFromAssembly(typeof(MyContext).Assembly);
+  }
+
+  // Bloque DbSet
+  public DbSet<Usuario> Usuarios { get; set; }
+  public DbSet<Rol> Roles { get; set; }
+  public DbSet<Permiso> Permisos { get; set; }
+  public DbSet<RolPermiso> RolPermisos { get; set; }
+
+  // Conexión a la base de datos
+  protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+  {
+    if (!optionsBuilder.IsConfigured)
+    {
+      var connectionString = _configuration.GetConnectionString("MyContext");
+      optionsBuilder.UseSqlServer(connectionString);
+    }
+  }
 }
+
 
 //Definiciones que toma encuenta el bloque DbSet
 public class Usuario
@@ -83,6 +97,8 @@ public class Configuracion : IEntityTypeConfiguration<Permiso>
         builder.Property(p => p.Descripcion).HasMaxLength(30);
     }
 }
+
+
 
 
 
